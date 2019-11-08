@@ -1,0 +1,13 @@
+<div class="h-100 d-flex flex-column chatroom-list">
+  <ng-container *ngFor="let chatroom of chatroomService.chatrooms | async">
+    <div class="chatroom-list-item">
+      <a [routerLink]="['/chat', chatroom.id]">{{chatroom.name}}</a>
+    </div>
+  </ng-container>
+  <ng-container *ngFor="let chatroom1 of chatroomService.chatrooms1 | async">
+    <div class="chatroom-list-item">
+      <a [routerLink]="['/chat', chatroom1.id]">{{chatroom1.name}}</a>
+    </div>
+  </ng-container>
+  <button class="btn" (click)="onSub()">HIT ME TO ADD CHATROOM</button>
+</div>
